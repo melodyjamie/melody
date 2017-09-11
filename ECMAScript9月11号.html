@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//怎么把局部变量拿到外部呢？
+/*// 闭包函数   (把里面的函数拿到外面来用)
+	function fn(){
+		var num=10;
+		return fn1;
+		function fn1(){
+			num++;
+			return num;
+		}
+	}
+	var result =fn() // fn1
+	  // alert(result); // fn1
+	  alert(result());// 11*/
+
+/*    //箭头函数(一般是放在回调函数里用)
+     var fn =function(a){
+     	return a;
+     }     
+     var fn = a=>a;
+      alert (fn(2));
+
+     //当没有参数的时，需要加一个()
+     var fn =function(){
+     	return 1;
+     } 
+     var fn = ()=>1; 
+     alert (fn());
+
+     //当参数多时，也需要加一个()；
+    var fn =function(a,b){
+     	return a+b;
+     } 
+     var fn = (a,b) =>a+b; 
+     alert (fn(2,3));
+
+    //当函数体多于一句是，需要用{}包起来。
+    var fn =function(a,b){
+     	return a-b;
+     	return a+b;
+     } 
+     var fn = (a,b) =>{ 
+       // console.log(arguments); //在箭头函数没有arguments对象       
+     	alert(a-b);
+     	alert(a+b)
+     	return [a,b];
+     }               //在箭头函数没有arguments对象。
+                          
+     alert(fn(1,2));*/
+
+
+//声明变量的方法 可以用 var 或者 let（用法基本一样）
+//注意：用let声明，不能在声明之前访问；
+     
+
+// 块级作用域
+// var 不识别块级作用域
+// let  能识别块级作用域
+/* //var与let的区别1：
+ {
+ 	let num =10;
+ 	var str='abcd';
+ 	console.log(num);
+    console.log(str);
+ }
+	console.log(num);
+	console.log(str);*/
+
+/*//var与let的区别2：
+var arr=[]
+for(var i=0;i<10;i++){
+	arr[i]=function (){
+		alert(i);
+	}
+   }
+   arr[2]();  // 10
+   arr[5]();  // 10
+
+for(let i=0;i<10;i++){
+	arr[i]=function (){
+		alert(i);
+	}
+   }
+   arr[2]();  // 2
+   arr[5]();  // 5  */
+
+/*//var与let的区别3：
+  let num ='a';
+  function fn(){
+  	alert(num); // a  var: undefined
+  	if(true){
+  		let num =10; //10  var:10
+  		alert(num);
+  	}
+  }
+   fn();
+   alert(num); //a  var:a 
+*/
+
+/*//var与let的区别4：
+//块级作用域嵌套:
+  let num='abcd';
+  {
+  	let num=10;
+  	{
+  		// let num=20;  
+  		   num=20;        
+  		console.log(num); //20  20
+  	}
+  	console.log(num); // 10   20
+  }
+ console.log(num); // abcd  */
+
+
+/*//const声明的用法：（声明的是常量）
+{
+	{
+	console.log(pi);
+	const pi =3.14;
+	}	
+}*/
+
+
+
+//num=>string   string=>num  =>boolean
+//内置   顶层   函数 （进行数据类型的转换）
+/* escape()    unescape()   Number()     String()
+   Boolean()   parseInt()  parseFloat()  isNaN()
+   */
+  
+/*//1. 对汉字进行编码 escape()
+  let str='张三';
+  console.log(escape(str));*/
+
+
+/*//2. 解码 unescape()
+  console.log(unescape('%u5F20%u4E09'));*/
+
+
+/*//3.把其他数字类型转换成数字用 Number()
+//（只有是数字型的字符串才会转换成数字）
+  console.log(Number(0b1111));  //转十进制
+  console.log(Number(true));   //把布尔值转数字  1
+  console.log(Number(false));  //把布尔值转数字  0
+  console.log(Number(null));  //把null  0
+  console.log(Number(undefined));    
+  //把undefined转  NAN(代表不是一个数字) 
+  console.log(typeof Number('123'));  //123
+  console.log(Number('00123'));  //123
+  console.log(Number('0123'));  //八进制  83
+  console.log(Number('01239'));  //后面的数大于等于8，就变十进制
+  console.log(Number(123.00));  // 123
+  console.log(Number('123.00'));  // 123
+  console.log(Number('123.01'));  // 123.01(要标准的小数才会识别成小数)
+  console.log(Number('123.01.2'));  // NAN  （不合法的小数直接转换NAN）
+  console.log(Number('123px'));  // NAN  （不合法的直接转换NAN）
+  console.log(Number('abcd'));  // NAN 
+  console.log(Number('true'));  // NAN 
+  console.log(Number(''));  // 0
+  console.log(Number('0o11'));  // 9  八进制
+  console.log(Number('0x11'));  // 17  十六进制
+  console.log(Number('0b11'));  // 3  二进制
+  */
+
+
+/*//4.转成字符串，在外面加双引号或者单引号 String()
+  console.log(String(true)); //'true'
+*/
+
+/*//5. Boolean()
+//除了NAN undefined null false '空字符串' 0  六个是false
+console.log(Boolean([])) //true
+console.log(Boolean('')) //false
+console.log(Boolean(' ')) //true*/
+
+
+/*//6.是要把字符串转换为整数 parseInt()
+//（规律：以数字、+、-、空格。从第一个数字开始，到第一个非数字结束）
+console.log(parseInt('1234')); // 1234
+console.log(parseInt('0b111')); // 0
+console.log(parseInt('100px')); // 100
+console.log(parseInt('  100px200')); // 100
+console.log(parseInt('  -1.00px200')); // -1
+console.log(parseInt('abc100px200')); // NAN*/
+
+
+/*//7. 是要把字符串转换为小数（能识别小数） parseFloat()
+//（规律：以数字、+、-、空格。从第一个数字开始，到第一个非数字结束）
+console.log(parseFloat('100.5px')) //100.5
+console.log(parseFloat('1005px')) //1005*/
+
+
+/*//8. isNaN()  is not a Number  
+//  能转换成数字的返回来的值是false 
+//  不能转换成数字的返回值是 true
+ console.log(isNaN(false)); //false  
+ console.log(isNaN('abcd')); //true */
+
+
+/*//隐士类型转化
+例子1：
+ var num ='100px';
+ alert(num-1)  //NaN*/
+
+/*//例子2：
+var num;
+ // num= num==undefined ?'x':num;
+    num= num? num:'x';
+  alert(num);*/
+
+//例子3：
+/*  if(num==undefined){
+  	num='x';
+  }else{
+  	num=num;
+  }
+  alert(num);*/
+
+/*  if(num){
+  	num=num;
+  }else{
+  	num='x';
+  }
+  alert(num)*/
+
+
+//怎么去创建一个对象？
+
+/*//1.json方式创建对象
+let  zhangsan  = {}
+console.log(typeof  zhangsan);
+*/
+
+/*//2.构造函数的方式来创建
+   function  Person(){
+      
+      }
+  let zhangsan= new Person();
+  let lisi= new Person();
+  console.log(zhangsan);
+  console.log(lisi);
+
+//添加属性(要给谁？添加什么属性？值是什么？)
+  // 谁  什么属性  值
+     zhangsan.age=18;
+     zhangsan.name='zhangsan';
+     lisi.heigth='175cm';
+     lisi.weight='57kg';
+//方法
+  zhangsan.say=function(){
+  	alert(zhangsan.name)
+  }
+
+  //访问 （访问谁？访问什么属性？）
+  //       谁      属性
+  alert(zhangsan.name);
+  alert(zhangsan.age);
+  alert(lisi.heigth);
+  alert(lisi.weight);
+  zhangsan.say();*/
+  
+
+</script>
+	
+</body>
+</html>
