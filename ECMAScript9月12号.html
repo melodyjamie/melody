@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//构造函数在创建对象的同时，有属性。
+ /*iphone8 外观   
+    牌子  颜色   尺寸  价钱  材质  系统  内存
+  iphone8 功能
+  通话  信息  相机   价钱   材质  上网  音乐*/
+     
+/*   function iphone(){
+   	this.brand='iphone8';
+   	this.size='5.5';
+   	this.color='red';
+   	this.price='1777';
+   	this.calls=function(){
+   		alert('打电话');
+   	}
+   	this.msg=function(){
+   		alert('发信息');
+   	}
+   	this.music=function(){
+   		alert('听音乐');
+   	}
+   }
+   let iphone8=new iphone();
+   console.log(iphone8);
+   alert(iphone8.tv); //没有属性 默认是undefined;
+  iphone8.tv(); //没有这个方法  报错
+   访问的方法 1.直接用点  2.用中括号
+   iphone8.size;
+   iphone8['size'];中括号里必须是字符串
+   iphone8['music']();  */
+
+
+/*//给函数添加参数，实现任意修改值。
+   function iphone(brand,size,color,price){
+   	this.brand=brand;
+   	this.size=size;
+   	this.color=color;
+   	this.price=price;
+   	this.calls=function(){
+   		alert('打电话');
+   	}
+   	this.msg=function(){
+   		alert('发信息');
+   	}
+   	this.music=function(){
+   		alert('听音乐');
+   	}
+   } 
+   let iphone8=new iphone('iphone8','5.8','red','2777');
+   let iphone9=new iphone('iphone9','6','pick','7777');
+   console.log(iphone8);
+   console.log(iphone9);
+   console.log(iphone8.brand);
+    iphone8.music();*/
+
+   
+/*  //怎么遍历对象？ for in
+   // i 是属性名  代表是一个字符串  
+   for(let i in iphone8){
+   	//                      i是字符串所以要用[]， ``要用反串号
+   	console.log(`${i}---${iphone8[i]}`)
+
+   }*/
+
+
+
+   //json
+  //   console.log (zhangsan.constructor)  返回构造函数
+  //一种添加格式
+  //  什么属性    值
+/*  let zhangsan={
+    'age':18,       //属性 冒号  值   逗号
+    'sex':'nan',
+    name :'zhangsan',  //每一条写完后，写下一行，必须加逗号
+    //前面的属性名可以加双引号或者单引号也可以不加，属性值如果是字符串比较加双引号或者单引号
+    say:function(){
+    	alert(1);
+    }, //最后一行，可以加逗号，也可以不加
+
+  };
+  console.log(zhangsan);
+  console.log(zhangsan.age);
+  zhangsan.say();*/
+
+
+
+/*//第二种添加
+ let zhangsan={}
+  zhangsan.age=18;
+  zhangsan.sex='nan';
+  zhangsan.say=function(){
+  	alert(1)
+  };
+  console.log(zhangsan);
+  console.log(zhangsan.age);
+  zhangsan.say();*/
+ 
+
+/*//例子：json创建对象方法1  iphone8  
+  let iphone8={
+    brand:'iphone8',
+   	size:'5.5',
+   	color:'red',
+   	price:'2777',
+   	calls:function(){
+   		alert('打电话');
+   	},
+   	msg:function(){
+   		alert('发信息');
+   	},
+   	music:function(){
+   		alert('听音乐');
+   	},
+  };
+ console.log(iphone8);
+ console.log(iphone8.size);*/
+
+/*//例子：json 2  iphone8
+ let iphone8={};
+ iphone8.barnd='iphone8';
+ iphone8.size=5.5;
+ iphone8.color='red';
+ iphone8.price='2777';
+ iphone8.calls=function(){
+    alert('打电话')
+ };
+ iphone8.msg=function(){
+ 	alert('发信息')
+ };
+ iphone8.music=function(){
+ 	alert('听音乐')
+ };
+ console.log(iphone8);
+ // console.log(iphone8.price);
+ console.log(iphone8['price']); //用中括号，需要要加引号。
+ // iphone8.calls();
+ iphone8['calls']();*/
+
+
+/*//创建对象三种： 
+//let lisi= new  object;（不常用，灵活性不高）
+
+//第四种通过类创建对象：
+//     student之后没有小括号
+class Student{
+//constructor是类的一个方法
+	constructor(){
+		this.name='zhangsan';
+		this.age=18;
+        this.say=function(){
+        	alert(1)
+        };
+	};
+	//方法习惯性写在外面，方法写外面时的写法：方法名(){}
+	study(){
+		alert('学习')
+	}; //最后结束时可以加分号但是不能加逗号，但是压缩时候必须加分号。
+    play(){
+    	alert('play')
+    };
+}
+  let iphone8 =new iphone()*/
+
+/*//9.12下午
+ //一.给构造函数传参
+ 
+ //二.给构造函数传参的方法
+//1.自己方法可以调用自己的属性
+
+this.study=function(){
+	alert(this.brain);
+};
+
+//2.自己的方法可以调用自己的另一个方法(方法与方法直接可以相互调用)
+ this.speech=function(value){
+ 	this.say(value);
+ };
+zhangsan.speech('演讲');
+
+//3.属性也可以是数字
+this[1]='a';
+this[2]='b';*/
+
+
+//例子  myarray 自己的数组
+/* 数组 var arr=[1,2,3,4,5,6];
+       console.log(arr);*/
+//模仿数组
+ let arr = new myArray(1,2,3,4);
+     // arr[0]=a
+     //     1  b 
+  console.log(arr);
+
+  //添加
+  arr.push(6,7,8);
+
+  /*//某个元素首次出现的位置
+ let index= arr.indexof('c');
+ console.log(index); */
+/* //unindexof 
+ let index2= arr.unindexof(4);
+ console.log(index2); */
+/* //reverse
+ let reverse2= arr.reverse();
+ console.log(reverse2);*/
+/* //includes
+ console.log (arr.includes('y'));*/
+ /*//sortup正排
+ console.log (arr.sortup());
+ //sortwop反排
+ console.log (arr.sortwop());*/
+ /*//some
+let rulet=arr.some(function(value){
+ 	return typeof value=='number';
+ })
+ console.log(rulet);*/
+
+ /*//every
+ let rulet2=arr.every(function(value){
+ 	return typeof value=='boolean';
+ })
+console.log(rulet2);*/
+//map
+ let mapp =arr.map(function(value,index){
+  	return value*index;
+  })
+console.log(mapp);
+/*//fillter
+ let fillter2 =arr.fillter();
+console.log(fillter2);*/
+/*//join
+console.log (arr.join("-"));*/
+
+ function myArray(){
+ 	// this[0]=arguments[0];
+ 	// this[1]=arguments[1];
+ 	for(let i=0;i<arguments.length;i++){
+ 		this[i]=arguments[i];
+ 	}
+    this.length=arguments.length;
+    //方法
+    this.push =function(){
+       for(let i=0;i<arguments.length;i++){
+       	this[this.length]=arguments[i];
+         this.length++;//手动改变它的长度
+       }
+    }
+     //map(一种对应关系)
+    this.map=function(fn){
+    	 let newarr=new myArray();
+    	for(let i=0;i<this.length;i++){
+    		newarr.push(fn(this[i],i));
+    	}
+    	return newarr;
+    }
+
+    /*//indexof某个元素首次出现的位置
+    this.indexof=function(value){
+        for(let i=0;i<this.length;i++){
+        	if(this[i]==value){
+        		return i;
+        	}
+        }
+        return -1;
+    }*/
+    /*//unindexof
+    this.unindexof=function(value){
+    	for(let i=this.length;i>=0;i--){
+    		if(this[i]==value){
+    			return i;
+    		}
+    	}
+    	return -1;
+    }*/
+    /*//reverse
+    this.reverse=function(){
+      let newarr=[];
+      for(let i=this.length-1;i>=0;i--){
+      	newarr[newarr.length]=this[i];
+      }
+      return newarr;
+    }*/
+    /*//includes
+    this.includes=function(value){
+    	for(let i=0;i<this.length;i++){
+             if(this[i]==value){
+             	return true;
+             }
+    	}
+          return  false;
+    }*/
+    /*//sort(排序)
+    //sortup正排
+    this.sortup=function(){
+    	for(let i=0;i<this.lenght;i++){
+    		for(let j=i+1;j<this.length;j++){
+    			if(this[i]<this[j]){
+    				let tmp=this[i];
+    				this[i]=this[j];
+    				this[j]=tmp;
+    			}
+    		}
+    	}
+    	return this;
+    }*/
+    /*//sortwop反排
+    this.sortwop=function(){
+    	for(let i=0;i<this.lenght;i++){
+    		for(let j=i+1;j<this.length;j++){
+    			if(this[i]>this[j]){
+    				let tmp=this[i];
+    				this[i]=this[j];
+    				this[j]=tmp;
+    			}
+    		}
+    	}
+    	return this;
+    }*/
+    /*//join(数组转换成字符串)
+    this.join=function(value){
+       let str="";
+       for(let i=0;i<this.length;i++){
+       	if(i<this.length-1){
+       		str+=this[i]+value;
+       	}else{
+       		str+=this[i];
+       	}
+       }
+       return str;
+    }*/
+        
+    /*//some
+    this.some=function(fn){
+    	for(let i=0;i<this.length;i++){
+           if(fn(this[i])){
+           	return true;
+           }
+    	}
+      return false;
+    }*/
+    /*//every
+    this.every=function(fn){
+    	for(let i=0;i<this.length;i++){
+    		if(!fn(this[i])){
+    			return false;
+    		}
+    	}
+    	return true;
+    }*/
+   
+   /*//fillter (过滤)
+   this.fillter=function(fn){
+    	 let newarr=[];
+    	for(let i=0;i<this.length;i++){
+    		if(this[i]%2==0){
+    		newarr[newarr.length]=this[i];
+    		}
+    	}
+    	return newarr;
+    }*/
+ };
+// indexof unindexof  includes(包含)
+// reverse(反转)  join(数组转换成字符串)  
+// sort(排序)
+// some  every  map(映射)   fillter(过滤)
+
+
+</script>
+	
+</body>
+</html>
