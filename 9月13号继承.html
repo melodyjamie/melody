@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承/__proto__属性/prototype</title>
+</head>
+<body>
+<script>
+//继承（通过原型对象）
+//先访问的顺序：
+//自己构造函数的-再找自己的原型对象-承的构造函数-继承的原型对象。
+function person(){
+	this.name='name';
+	this.age=17;
+	this.sex='nan';
+}
+person.prototype={
+   say:function(){
+   	alert(this.name);
+   },
+   kill:function(){
+   	alert('kill');
+   },
+}
+//添加
+person.prototype.aa=function(){
+	alert('person输出aa')
+}
+function student(){
+	this.classes='wuif1707-1';
+	this.num='1707007';
+	this.sleep=function(){
+		alert('休息')
+	};	
+}
+let zhangsan=new person();
+student.prototype=new person();//通过原型对象继承
+let lisi=new student();
+console.log(zhangsan);
+console.log(lisi);
+console.log(lisi.name);
+  lisi.aa(); //添加的输出
+
+
+
+//__proto__（所有对象都具备的属性）
+//prototype只有函数才有的属性
+//看看一个对象有哪些属性，哪些方法？在控制台把__proto__点开。
+//__proto__是对象有的属性，会指向自己的构造函数的原型对象
+console.log(lisi.__proto__==student.prototype);
+console.log(student.prototype.__proto__==person.prototype);
+console.log(person.prototype.__proto__==Object.prototype);
+console.log(Object.prototype.__proto__==null);
+
+
+</script>
+	
+</body>
+</html>

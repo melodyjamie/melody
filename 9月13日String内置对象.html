@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+</head>
+<body>
+<script>
+/*object  string  Number  Boolean Array Date RegEXP bo*/
+
+	/*let str='abcdabcd';
+ //查对象有那些属性和方法？直接用__proto__
+	console.log(str.__proto__);
+  //返回字符串的长度，不区分中英文
+  console.log(str.length);*/
+
+  //string 内置属性
+
+  /*//一：方法（查找）
+  //1. charAt(数字)： 用来返回指定位置的字符
+     console.log(str.charAt(2)); //注意：对应的是str字符串
+
+  //2.  charCodeAt(数字)：返回某一个指定位置的字符对应的Unicode编码
+     console.log(str.charCodeAt(1));
+  //返回Unicode编码对应的字符串
+    console.log (String.fromCharCode(98));//注：对应的是String
+
+
+   //二：位置 indexOf  lastIndexOf
+     let index = str.indexOf('abcd')  //找某个字符串的首次位置
+     let index1 = str.lastIndexOf('abcde')  //-1 找某个字符串的最后出现的位置
+    console.log(index,index1);*/
+
+
+    /*//三： 截取    
+    //1. slice 开始位置，结束位置
+    let str='abcdabcd';
+     //         开始位置  结束位置
+    let str1=str.slice(0,4);//截取不包括结束位置
+    console.log(str1);
+    console.log(str);//slice截取后，不会影响原来字符串
+    let str1=str.slice(0,-1); //slice支持负数，从末尾往回计数的0,-8,-7...-1
+    //可以省略结束位置，从指定的开始位置，截取到结尾。
+    let str1=str.slice(2);//可以省略末尾位置*/
+
+
+    /*//2.  substr   开始的位置 长度
+    let str1=str.substr(2,2);*/
+
+
+    /*//3.  includes 是否存在 
+    console.log(str.includes('abd'));  //返回布尔值*/
+
+
+    /*//四： 替换
+    //1.  replace 替换  需要替换的字符串 替换成的字符串   
+    let str1=str.replace('abcd','****'); //只能替换一次
+    let str2=str.replace('abcd','****'); 
+    console.log(str1);
+    console.log(str2);
+    console.log(str);//原来的不变*/
+    
+    /*//2. repeat （将一个字符串重复若干次）
+    let star="*".repeat(rstr.length);//repeat重复字符串*/
+
+    /*  //例子: repeat  replace 
+    //怎么替换的基础上再替换？
+    let str='abcdancd';
+  console.log (replaceAll(str,'cd'));
+    function replaceAll(str,rstr){
+    	//循环 while   条件 存在rstr 
+    	//处理*号
+    	// let star = '';
+    	// for (let i=0;i<rstr.length;i++){
+    	// 	star+='*';
+    	// }   	
+    let star="*".repeat(rstr.length);//repeat重复字符串
+    while(str.includes(rstr)){
+    	str=str.replace(rstr,star);
+    }	
+      return str;
+    	//存在
+    	//替换 replace
+    	//更新 
+    	//返回 return
+    }*/
+
+    
+   /*//五：匹配 match 
+    let str='abcdabcedrfu'
+   console.log (str.match('abc'));*/
+
+
+   /*//六：去空 trim 去两边的空格  
+       let str='   abcdabcedrfu   ';
+      console.log (str.match());*/
+
+
+     /*//七： split ：转换成数组
+     let str='a-b-c-d';
+     //    分割的特定的字符  分割值数组的长度（可以不写）
+     let arr=str.split('-',2);
+     console.log(arr);*/
+
+    /*//八：把字符串转换成大小写
+    let str = 'abcd';
+    let str1 = 'QERT';
+     //转换成大写字符串
+   console.log (str.toUpperCase());
+      //转换成小写字符串
+   console.log (str.toLowerCase());*/
+
+
+/*// 例子： 在url中把baidu所有位置都显示出来
+//方法一：  
+  let url='https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+
+ console.log (weizhi(url,'baidu'));
+   // 判断 找位置 
+   function weizhi(str,rstr){
+     	let arr=[];
+     	// let star='';
+     	// for(let i=0;i<rstr.length;i++){
+     	// 	star+='*';
+     	// }
+     	let star="*".repeat(rstr.length)
+    while(str.includes(rstr)){	
+      arr.push(str.indexOf(rstr));
+      str = str.replace(rstr,star);     
+    }
+    return arr;   
+    }
+//方法二：
+ console.log(position(url,'baidu'));
+   function position(arr,sarr){
+   	let arr1=[];
+   	for(let i=0;i<arr.length;i++){
+   		//                百度长度   		                
+   		if(arr.substr(i,sarr.length) == sarr){
+         arr1.push(i);
+   		}
+   	}
+   	return arr1;
+   }*/
+
+
+</script>
+	
+</body>
+</html>

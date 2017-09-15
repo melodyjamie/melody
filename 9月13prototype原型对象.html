@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype原型对象</title>
+</head>
+<body>
+<script>
+
+/*function person(name,age,sex){
+    	this.name=name;
+    	this.age=age;
+    	this.sex=sex;
+    	this.hobby=function(){
+    		alert('吃东西')
+    	};
+    };
+//prototype原型对象(方法)
+//放在构造函数的原型对象，属性也可以放原型对象里，但是不能修改了。
+person.prototype={
+    say:function(){
+    	alert(this.name);
+    },
+    sleep: function(){
+    	alert('休息')
+    },
+    play:function(){
+    	alert(`${this.name}玩儿`);
+    },
+};*/
+
+
+/*//添加属性或者方法？
+//原型对象添加方法，在原来的原型对象添加一个。
+person.prototype.eat=function(){
+	alert('eat')
+};
+
+
+//输出
+let zhangsan=new person('zhangsan',18,'nv');
+let lisi=new person('lisi',22,'nan');
+console.log(zhangsan);
+console.log(lisi);
+zhangsan.say();
+zhangsan.eat();
+zhangsan.play();
+console.log(zhangsan.hobby==lisi.hobby);//false
+console.log(zhangsan.eat==lisi.eat);//true
+console.log([]==[]);//false*/
+
+
+/*//怎么删除属性和方法？(原型对象是删除不了)
+//删除属性用delete
+alert(zhangsan.sex);
+delete zhangsan.sex;
+alert(zhangsan.sex);*/
+
+
+/*//删除整个对象用null 
+console.log(zhangsan);
+zhangsan=null;
+console.log(zhangsan);//删除整个对象*/
+
+
+/*//typeof  判断数据类型
+//instanceof 判断构造函数
+function student(){
+	this.name='student';
+}
+function person(){
+	this.name='person';
+}
+let zhangsan= new student();
+let lisi= new person();
+console.log (zhangsan instanceof student);//true
+console.log (lisi instanceof student);//false
+let arr=[];  //判断是否是一个数组
+console.log(arr instanceof Array);//true
+
+console.log(zhangsan.constructor);//返回原来的函数*/
+
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>
