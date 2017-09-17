@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array数组</title>
+</head>
+<body>
+<script>
+	
+   //对象中如果没有属性，会显示undefined，不会报错。
+   //打印 console.dir()
+       /*//        for里的i是独立作用。
+       for(let i=0;i<arr.lenghth;i++)*/
+     /*  	let arr=['a','b','c','d','e']*/
+//添加和删除
+       /*//添加
+        let  =arr.push(1,2,3,4,5); // 在后面添加
+          console.log(str);  // push返回的值是新数组的长度*/
+
+        /*let str= arr.unshift('x','y','z');  // 在前面添加
+            console.log(str); // unshift返回的值是新数组的长度*/
+
+
+         /*//删除
+         let str= arr.pop();//从后面删除一个，小括号不接受任何参数
+
+         arr.shift();//小括号不接受任何参数
+         splice(pos,num,...)
+         arr.splice(1,2);
+         //arr=['a','d','e']
+         arr.splice(2,0,'x','y')
+        console.log(arr);*/
+ 
+
+/*//把两个数组合并  1.用for遍历  2.把数组拆开 3.concat可以合并多个数组
+         
+          let arr=[1,2,3,4,5,6];
+          let arr1=['a','b','c','d']
+          let arr2=['x','y','z']*/
+
+          /* //1.用for遍历
+          for(let i=0;i<arr1.length;i++){
+          arr[arr.length]=arr1[i]
+          }*/
+
+        /*//2.把数组拆开
+         arr.push(...arr1);*/
+
+         /*// 合并 concat  可以合并多个数组
+         let newarr=arr.concat(arr1);
+         let newarr=arr.concat(arr1,arr2);
+        console.log (arr.join('-')); //数组转换成字符串
+        console.log (arr.reverse())  //反转*/
+
+
+/*//排序 sort
+        let arr=[12,8,102,66,77,85,30,1,32]
+        //排序  默认按照ALSS码排序
+         console.log (arr.sort());
+        //如果按数字大小排序  要用函数
+         let rulst= arr.sort(function(a,b){
+        	// return  a-b<0;  //小于零a在b的后面，降序
+        	return  a-b>0;  //大于零a在b的前面，升序
+        });
+        console.log (rulst);*/
+
+
+// some  every  map  filter forEach
+// some  every   返回值是布尔值
+// map  filter   返回值是数组
+//forEach（没有返回值，只是用来变量和循环的）
+
+/*//例子：求和  forEach
+      let sum=0;
+      arr.forEach(function(value,index)){
+      	return 
+      }*/
+
+
+/*//求偶数 forEach
+      let ou=[];
+       arr.forEach(function(value,index)){
+        if(value%2==0){
+           ou.push(value)
+        }
+        }*/
+
+
+/*//filter                  对应的元素 对应的下标 数组  
+     let newarr= arr.filter(function(value,index,obj){
+    	return value%2==0
+     })
+     console.log(newarr); */
+     
+   
+/*//map
+     let map= arr.map(function(value,index,obj){
+    	return value+index;
+      })
+     console.log(map); */  
+                  
+  
+/*//箭头函数
+     //map
+    let map=arr.map((value+index)=>value+index);
+     //求和
+    let sum=0;
+    arr.forEach((value)=>sum+=value);
+    console.log(map);*/
+
+
+	/*//1.没有agurnments
+	//2.不能作为构造函数
+	//需要返回json对象 写法两种
+	let fn=(num)=>({name:'zhangsan',age:18});
+	let fn=(num)=>{return{name:'zhangsan',age:18}};*/
+
+
+//数组去重复
+	  // let arr=[1,2,3,4,5,1,2,3];
+	  // [1,2,3,4,5]
+	  // [4,5,1,2,3]
+	   /*//方法一：
+	    function chongfu(arr){
+	    let newarr=[];
+	   for(let i=0;i<arr.length;i++){
+	   	if(!newarr.includes(arr[i])){
+	   		newarr.push(arr[i]);
+	   	}
+	   }
+	    return newarr;
+	}
+	  console.log(chongfu(arr));*/
+
+/*	//方法二：设置一个变量
+	let arr=[1,2,3,4,5,1,2,3];
+	  function delRepeat(arr){
+	    let newarr=[];   
+	    for(let i=0;i<arr.length;i++){ 
+	         let flag=true;  //设置一个变量	
+	        for(let j=i+1;j<arr.length;j++){
+	           if(arr[i]==arr[j]){
+	           	  flag=false;
+	           	  break;
+	           }
+	         }
+	       if(flag){
+	    		newarr.push(arr[i]);
+	    	}   	    
+	    } 
+	    return newarr; 
+	}
+	  console.log(delRepeat(arr));*/
+
+//如果给它括成数组 在去重复添加在方法里
+let arr=[1,2,3,4,5,1,2,3]; 
+ //   constructor返回构造函数
+ //   arr的构造函数是Array 
+ //   添加方法：在arr构造函数的原型对象添加
+Array.prototype.delRepeat=function(){
+	 let newarr=[];   
+	    for(let i=0;i<this.length;i++){ 
+	         let flag=true;  //设置一个变量	
+	        for(let j=i+1;j<this.length;j++){
+	           if(this[i]==this[j]){
+	           	  flag=false;
+	           	  break;
+	           }
+	         }
+	       if(flag){
+	    		newarr.push(this[i]);
+	    	}   	    
+	    } 
+	    return newarr;
+}
+console.log(arr.delRepeat());
+
+
+
+</script>
+	
+</body>
+</html>

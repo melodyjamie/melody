@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math方法属性</title>
+</head>
+<body>
+<script>
+   //console.log(Math);
+   /*//abs() 绝对值
+	 Math.abs(10);//10
+	 Math.abs(-10);//10*/
+
+	/*//max 最大值
+	//min  最小值
+     Math.max(1,2,3,4,-10,20);
+	 Math.min(1,2,3,4,-10,20);*/
+
+	 /*//round 四舍五入
+	  console.log (round(10.4))
+	   console.log(round(10.5))
+	   console.log(round(-0.45))
+	   console.log(round(0.45));  */
+
+	 /*//ceil 向上取整
+	 console.log (ceil(10.4)); //11
+	 console.log (ceil(5.5));  //6
+	 console.log (ceil(-5.3)); //-5*/
+
+	 /*//floor 向下取整
+	  console.log (floor(-5.3)); //-5
+	  console.log (floor(5.3)); //5*/
+     
+     /*//random() 随机数 
+     for(let i=0;i<10;i++){
+      // console.log(Math.random()); //得到0~1 的随机数
+      // console.log(Math.random()*10); //得到0~10 的随机数   
+      console.log(Math.random()*10+10); //得到10~20 的随机数
+      console.log(Math.random()*15+5); //得到5~20 的随机数
+      //任意距离      
+      console.log(Math.random()*两个数之间的距离+小的值);    
+     }*/
+
+    /*//操作页面中的元素
+     //rgb 0~255     
+     function color(){
+     	let str='rgb(';
+     	for(let i=0;i<3;i++){
+     		let num=Math.round(Math.random()*255);
+     		str+=num+',';
+     	}
+     	str=str.slice(0,-1);
+     	str+=")";
+     	return str;
+     }
+     let box=document.getElementById('box');
+     box.onmousemove=function(){
+     	box.style.background=color();
+     }*/
+
+     
+  
+  /*//pow(s,n) 求s的n次方
+     console.log (Math.pow(2,3));//8*/
+
+   /*//sqrt(s)  求s的根号
+     console.log (Math.sqrt(4));//2*/
+
+     
+
+//例子：随机取数组的三个数  用下标随机
+/*let arr=['a','b','c','d','e'];
+   function shu(){
+   	 let str=[]; 
+     for(let i=0;i<3;){     	
+       let flag=true;//不重复
+     	let num= Math.floor(Math.random()*arr.length);        
+       if(str.includes(arr[num])){         	
+         flag=false; //重复      
+       }
+       if(flag){
+      	str.push(arr[num]);
+      	i++;
+      }      
+     }
+     return str;
+   }
+  console.log(shu())*/
+
+  /*let arr=['a','b','c','d','e'];
+  function shu(){
+     let str=[];
+     for(let i=0;i<3;){
+     	let num= Math.floor(Math.random()*arr.length); 
+     	if(!str.includes(arr[num])){
+     	str.push(arr[num]);
+      	i++;	
+     	}
+     }
+     return str;
+  }
+     console.log(shu())*/
+
+  /*let arr=['a','b','c','d','e'];
+  function randomArr(arr,num){
+  	let newarr=[];
+  	for(let i=0;i<num;i++){
+  	 let index =Math.floor(Math.random()*arr.length);  	           	
+  	while(newarr.includes(arr[index])){
+  	  index =Math.floor(Math.random()*arr.length)
+  	}
+  	newarr.push(arr[index]);
+  	}
+    return newarr;
+  }
+   console.log (randomArr(arr,4));*/
+
+
+</script>
+	
+</body>
+</html>
