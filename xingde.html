@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	 button{
+	 	width: 50px;
+	 	height: 30px;
+	 	background: blue;
+	 	font-size: 14px;
+	 	color: #fff;
+	 	border-radius: 4px;
+	 }
+</style>
+<body>
+ <h1><a href="history.html">这是history.is html</a></h1>
+	
+	<button id='forward'>前进</button>
+	<button id='back'>后退</button>
+	<button id='refresh'>刷新</button>
+	<script>
+		// alert(history.length)
+      //获取
+  let forward=document.getElementById('forward')
+     forward.onclick=function(){
+    	history.forward()
+    }
+  let backe=document.getElementById('back')
+    //点击
+    backe.onclick=function(){
+    	history.back()
+    }
+  let refresh=document.getElementById('refresh')
+      refresh.onclick=function(){
+      	history.go(0);
+      }
+
+
+	</script>
+
+</body>
+</html>

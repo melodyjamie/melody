@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ <script>
+ 	//bom window 
+/* 	//screenLeft  获取浏览器到左边的距离
+ 	//screenTop  流程器相对于上边的距离
+ 	alert(window.screenLeft);
+ 	alert(window.screenX);*/
+
+ 	// innerWidth 获取浏览器视口的宽度     i8以上
+ 	// innerHeight 获取浏览器视口的高度
+ 	// outerWidth  获取整个浏览器的宽度
+  // innerText  用来设置内容
+ 	
+    /*//兼容方法                  客户端的宽度   
+        document.documentElement.clientWidth
+        document.documentElement.clientHeight*/
+
+    //window.frames    //获取当前的窗口的所有子窗口
+    //window.top      //查看子窗口的顶层窗口
+    //window.parent  //获取子窗口的父窗口
+    //window.self   //  获取本身的窗口
+    
+    // moveTo(100,100);
+    // moveBy(100,100);
+    
+    
+    //时间函数，用于写动画，模拟动画    
+    //开启时间函数
+     //周期函数         回调函数   周期（最小周期4毫秒）
+     // window.setInterval(function(){},1000) //按照指定的周期不停的执行某一个函数
+
+    /*// 1.可以直接传函数
+     window.setInterval(function(){alert(1)},1000);*/
+
+    /*// 2.可以传函数名进去
+     var fn=function(){
+     	alert(1);
+     } 
+     window.setInterval(fn,1000);*/
+    
+    /*// 3.箭头函数
+    let t= window.setInterval(()=>{alert(1)},1000);
+
+    // 清除某一个时间函数。清除之前必须要把开启的时间函数保存下来再删。
+    window.clearInterval(t);
+
+   //指定的周期之后只执行一次
+     let t=window.setTimeout(fn,1000);
+     let t= setTimeout(fn,1000);  //window可以省略   
+   //清除
+     clearTimeout(t);*/
+
+  /*// 例子：setTimeout(fn,1000)如何模拟setTimeout(fn,1000);
+     //用递归函数模拟
+     var fn=function(){
+     	alert(1);
+       setTimeout(fn,1000);
+     }*/ 
+
+    
+/*   //带有确定和取消的按钮对话框
+   let flag=confirm('确定退出吗？');
+   alert(flag); */ 
+
+
+
+/*   //打开 (不常用)   
+   //       页面   地址       修饰
+   open('y.html','newwindow','width=500,');
+   //关闭窗口
+   close()*/
+ 
+
+  /* document.write('<table border=1 cellspacing=0 align=center>')
+ 	for(var i=1;i<10;i++){
+ 		document.write('<tr>');
+ 		for(var j=1;j<10;j++){
+ 			document.write('<td>'+i+'x'+j+'</td>')
+ 		}
+ 		document.write('</tr>');
+ 	}
+ document.write('<table>')*/
+
+
+
+
+
+ </script>
+	
+</body>
+</html>
