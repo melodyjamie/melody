@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 300px;
+		height: 300px;
+		background: pink;
+		margin: auto;
+	}
+
+</style>
+<body>
+<div class="box"></div>
+
+
+<script>
+	//box  按照  300s   10px  放大   500px  //变大到500px再返回300px;
+
+//获取
+  let box=document.getElementsByClassName('box')[0];
+//时间函数  
+  let t=setInterval(fn,60)
+  let flag=10;
+  function fn(){	
+    let w=parseInt(getComputedStyle(box,null).width); //获取宽度
+     if(w>=500){ 	
+     // clearInterval(t);
+       flag=-flag;  //把方向换一下就能实现了
+     }
+     if(w<300){
+     	flag=-flag;    //把方向换一下就可以了
+     }
+      box.style.width= `${w+flag}px`;  //设置宽度
+  }
+
+
+
+
+
+</script>
+<!-- 字符串转换成数字  parseInt() -->
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+main{
+	width: 1226px;
+	height: 300px;
+	border: 1px solid #000;
+	position: relative;
+}
+ .bns{
+ 	width: 125px;
+ 	height: 15px;
+ 	position: absolute;
+ 	bottom: 20px;
+ 	left: 50%;
+ 	margin-left: -65px;
+ }
+.bns li{
+ 	width: 15px;
+ 	height: 15px;
+ 	background: red;
+ 	float: left;
+ 	list-style: none;
+ 	border-radius: 50%;
+ 	margin-right: 10px;
+ 	cursor: pointer;
+ }
+
+</style>
+<body>
+<main>
+	<ul class="bns">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</main>
+ 
+ <script>
+ 	let ul=document.getElementsByClassName('bns');
+ 	let lis=ul[0].getElementsByTagName('li');
+ 	for(let i=0;i<lis.length;i++){
+ 		lis[i].style.background='#ff6700';
+ 	}
+ </script>
+
+
+</body>
+</html>

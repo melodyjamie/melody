@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性</title>
+</head>
+<style>
+	div{
+		width: 300px;
+		height: 200px;
+		background: red;
+	}
+
+</style>
+<body>
+ <div id="box" class="one">
+ 	<img src="" alt="" title="">
+ </div>
+
+ <script>
+ 	let box=document.getElementById('box');
+ 	let img=document.getElementById('img');
+ 	img[0].src='写图片名';
+ 	img[0].title='这是一张图片';  
+
+ 	//获取id名
+ 	box[0].id='';//修改
+ 	console.log(box[0].id);//获取
+
+
+  //获取class名
+    box[0].className=''
+ 	console.log(box[0].className);//获取
+
+
+ </script>
+	
+</body>
+</html>

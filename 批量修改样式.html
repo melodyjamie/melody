@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通过类名或者id批量修改内容</title>
+</head>
+<style>
+	div{
+		width: 200px;
+		height: 300px;
+	}
+ .green{
+ 	background: green;
+ }
+ #circle{
+    border-radius: 50%;  
+}
+
+</style>
+<body>
+<div class="red"></div>
+
+<script>
+//批量修改样式
+/*//获取
+	let divs=document.getElementsByTagName('div');*/
+/*//设置样式
+	divs[0].className='green';
+	divs[0].id='circle';*/
+
+
+//行内样式设置
+   divs[0].style.background='red';
+//行内样式获取,只能获行内样式
+ console.log (divs[0].style.width)
+
+
+/*//获取外部和嵌入方法的方式（当前所有的样式） 只能用来获取，不能用来设置
+//                      获取样式的对象  默认值  需要获取的样式
+    console.log (getComputedStyle(divs[0],null).width)
+    console.log (getComputedStyle(divs[0],null).border)*/
+</script>
+	
+</body>
+</html>

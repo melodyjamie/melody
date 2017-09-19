@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	#box:first-child{
+		width: 300px;
+		height: 300px;
+		background: #ff6700;
+	}
+
+</style>
+<body>
+ <div id="box"></div>
+ <div class="box"></div>
+ <div class="box"></div>
+ <div class="box"></div>
+
+
+<script>
+/*//打印一个对象用console.dir
+  	console.dir(document.title);
+  	document.title='这是Document标题'
+    document.log(document.URL);  //URL不能设置
+    document.bgColor='#ff6700';   背景色
+    document.fgColor='#0085d0';   前景色,字体颜色*/
+
+
+//id获取方法
+    //驼峰的方法获取，通过id获取元素
+    //只能获取到第一个，就是同Id名，js中只能获取一个元素
+   let box = document.getElementById("box");
+   //操作样式
+   box.style.height='500px';
+
+
+//标签获取方法
+   //                             放的是标签名
+  let divs= document.getElementsByName('div');//通过标签名获取回来是指定标签名的集合
+  
+  //如果想获取某个元素，加上下标就可以访问了。
+   divs[0].style.background='pink';
+
+  //如果报错，1.下标越界 2.或者没有那个下标。
+   divs[4].style.background='pink';
+
+   //返回元素的个数
+   console.log(divs.length);
+
+   //遍历(把所有进行操作)
+   for(let i=0;i<divs.length;i++){
+   	 divs[i].style.background='pink';
+   }
+ 
+
+//类名获取方法 
+  //类名获取方法(获取回来的元素也是一个标签集合)
+  document.getElementsByClassName('box');
+ 
+
+//获取页面中所有的元素集合
+   document.all
+   document.getElementsByTagName('*');
+
+
+
+	
+</script>
+	
+</body>
+</html>

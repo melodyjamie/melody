@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	button{
+	  width: 100px;
+	  height: 50px;
+	  background: #ff6700;
+	  margin-right: 5px;
+	  border-radius: 5px;
+	  font-size: 16px;
+
+	}
+	#saise{
+		width: 210px;
+		height: 300px;
+		background: #0085d0;
+		margin-top: 10px;
+		transition: 0.5s;
+	}
+
+</style>
+<body>
+  <button>sildeDOW</button>
+<button>sildeTOP</button>
+<button>sildeTOggle</button>
+  <div id="saise"></div>
+
+
+<script>
+//获取
+	let bnts=document.getElementsByTagName('button');
+	let saise=document.getElementById('saise');
+//设置
+	bnts[0].onclick=function(){
+		saise.style.height='300px';
+	}
+	bnts[1].onclick=function(){
+	 saise.style.height=0;
+	}
+
+
+//可以同时转变的时候，一般考虑用变量
+	/*
+	dow-up
+	up-dow
+	 */
+	let flag=true;
+   bnts[2].onclick=function(){
+   	if(flag){
+        saise.style.height=0;
+        flag=false;
+   	}else{
+       saise.style.height='300px';
+       flag=true;  
+   	}
+   }
+
+</script>
+	
+
+
+
+</body>
+</html>
