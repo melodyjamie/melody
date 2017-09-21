@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script src="兼容性问题.js"></script>
+
+<!-- <div class="box"></div>
+<div class="box box1 box2"></div>
+<div class="box box1"></div>
+<div class="box box1"></div>
+<div class="box box1"></div> -->
+<div id="one">
+	<div class="box"></div>
+</div>
+<div class="box"></div>
+
+
+
+<script>
+  window.onload=function(){
+  /*	//可以获取范围  
+        var box=getClass('box');
+        for(var i=0;i<box.length;i++){
+        box[i].innerHTML='这是一个DIV'; 
+       }  */  
+    $('#one').innerHTML='one';     //返回值是一个元素
+    $('.box')[0].innerHTML='div';             //返回值是一个集合
+      $('div');
+    console.log($('div'))
+   var divs= $('div')[0].innerHTML;    //返回值是一个元素    
+    console.log (divs.length)
+
+}
+     
+
+</script>
+	
+</body>
+</html>
