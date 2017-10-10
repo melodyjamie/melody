@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+    button{
+        width:50px;
+        height:30px;
+    }
+</style>
+<body>
+<canvas></canvas>
+<button>撤销</button>
+<script>
+    let canvas=document.querySelector('canvas');
+    let ctx=canvas.getContext('2d');
+    let btn=document.querySelector('button');
+    let arr=[];
+
+    canvas.onmousedown=function(e){
+        let cx=e.offsetX , cy=e.offsetY ;
+        canvas.onmousemove=function(e) {
+            let ox = e.offsetX, oy = e.offsetY;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);//把之前的记录清除
+            if(arr.length){
+              ctx.putImageData(arr[arr.length-1],0,0);
+            }
+            ctx.beginPath();
+            ctx.moveTo(cx, cy)
+            ctx.lineTo(ox, oy);
+            ctx.stroke();
+        }
+        canvas.onmouseup=function(){
+            //           获取画布数据放在arr数组里
+            arr.push(ctx.getImageData(0,0,canvas.width,canvas.height));
+            canvas.onmousemove=null;
+            canvas.onmouseup=null;
+        }
+
+        // 撤销
+       btn.onclick=function(){
+          if(!arr.length){return};
+           arr.pop(); //删除最后一个
+           ctx.clearRect(0,0,canvas.width,canvas.height);
+           ctx.putImageData(arr[arr.length-1],0,0);
+        }
+
+
+    }
+
+
+
+/* let data =ctx.getImageData(0,0,300,300);  //获取某一指定区域像素数据
+    //90000 4
+    ctx.clearRect(0,0,300,300); //删除
+    ctx.putImageData(data,0,0); //把之前获取回来的data数据放回画布指定位置  */
+
+</script>
+</body>
+</html>

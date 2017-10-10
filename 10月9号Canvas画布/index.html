@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+
+</style>
+<body>
+<!--画布默认是宽300，高150，修改时一般不用css改-->
+    <canvas width="600" height="300">
+   <!--不支持时，写一下替换内容-->
+        浏览器版本太低，请升级浏览器
+    </canvas>
+<script>
+    window.onload=function(){
+        let canvas=document.querySelector('canvas');
+         let ctx= canvas.getContext('2d');//画图需要用这个画笔
+
+         //     矩形的位置    宽高尺寸
+    /*  ctx.fillRect(0,0,300,150);  //填充矩形
+         //    前两个是写位置   后两个值是矩形尺寸
+        ctx.strokeRect(300,150,300,150);  //描边矩形
+        ctx.clearRect(10,10,280,130);  //清除    */
+
+    /*   ctx.fillStyle='red'; //样式
+         ctx.fillRect(150,0,300,300); //画300*300矩形在中间
+         ctx.clearRect(170,20,260,260);
+         ctx.fillRect(190,40,220,220);
+         ctx.strokeStyle='green';
+         ctx.strokeRect(210,60,180,180);  */
+
+/* 10  5*/
+
+    /*   for(let i=0;i<5;i++){
+              for(let j=0;j<10;j++){
+                  ctx.strokeStyle=`rgb(${Math.floor(Math.random()*256)},
+                  ${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+
+          //  ctx.fillStyle=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})` ;
+          //  ctx.fillRect(j*60,i*60,60,60);
+                  ctx.strokeRect(j*60,i*60,60,60);
+              }
+          }   */
+
+
+/*不规则图形画*/  //三角形
+    /*   ctx.beginPath(); //开始途径
+        ctx.moveTo(50,50); //开始的点
+        ctx.lineTo(50,150);
+        ctx.lineTo(150,150);
+        ctx.closePath();//闭合路径
+     //   ctx.fill();//填充
+        ctx.strokeStyle='red';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(70,50);
+        ctx.lineTo(170,50);
+        ctx.lineTo(170,150);
+        ctx.fillStyle='red';
+        ctx.fill();   */
+
+
+//画圆
+    /*   // 前两个圆心位置   3个半径  4个开始弧度 5个结束弧度
+        ctx.arc(300,150,100,0,Math.PI*2);*/
+
+        /*//半圆
+        ctx.arc(300,150,100,0,Math.PI,true);//默认false,代表的是方向*/
+
+    /*  //竖着的半圆
+        ctx.arc(300,150,100,Math.PI/2,-Math.PI/2,true);
+        ctx.fill() */
+
+
+//笑脸
+    /*
+        ctx.strokeStyle='orange';
+     ctx.arc(300,150,150,0,Math.PI*2);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+     ctx.arc(240,120,20,0,Math.PI*2);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+     ctx.arc(360,120,20,0,Math.PI*2);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+      ctx.arc(300,200,50,0,Math.PI);
+        ctx.stroke();
+   //不用closePath,也可以直接用moveTo()，(x,y)找下一个需要画的坐标  */
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

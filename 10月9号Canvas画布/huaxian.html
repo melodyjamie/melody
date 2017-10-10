@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画线</title>
+</head>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+
+</style>
+<body>
+<canvas></canvas>
+
+<script>
+  window.onload=function(){
+      let canvas=document.querySelector('canvas');
+      let ctx=canvas.getContext('2d');
+//      ctx.moveTo()
+      canvas.onmousedown=function(e){
+          let cx=e.offsetX , cy=e.offsetY ;
+
+   /* //画铅笔线时，把 ctx.beginPath(); ctx.moveTo(cx,cy);放外面就可以了
+          ctx.beginPath();
+          ctx.moveTo(cx,cy);*/
+
+          canvas.onmousemove=function(e){
+              let ox=e.offsetX , oy=e.offsetY;
+       ctx.clearRect(0,0,canvas.width,canvas.height);//把之前的记录清除
+        //  画线
+              ctx.beginPath();
+              ctx.moveTo(cx,cy)
+              ctx.lineTo(ox,oy);
+              ctx.stroke();
+
+    /*  //画圆
+              let r= Math.sqrt(Math.pow((cx-ox),2)+ Math.pow((cy-oy),2));
+              ctx.beginPath();
+              ctx.arc(cx,cy,r,0,Math.PI*2);
+              ctx.stroke();  */
+
+     /*//画铅笔线：把 ctx.beginPath(); ctx.moveTo();放onmousemove外面就可以了。
+              ctx.lineTo(ox,oy);
+              ctx.stroke();*/
+
+  /*    //画多角形
+      let r= Math.sqrt(Math.pow((cx-ox),2)+ Math.pow((cy-oy),2));
+      polyL(cx,cy,r,5)
+        function polyL(x1,y1,r,n){
+                  let red=Math.PI/n;
+                  ctx.beginPath();
+                  ctx.moveTo(x1+r,y1); //开始位置
+                  for(let i=0;i<2*n;i++){
+                      let r1;
+                      r1= i%2==0 ? r :r/2;
+                      let x=x1+r1*Math.cos(red*i);
+                      let y=y1+r1*Math.sin(red*i);
+                      ctx.lineTo(x,y);
+                  }
+                  ctx.closePath();
+                  ctx.stroke();
+              }   */
+
+          }
+
+          canvas.onmouseup=function(){
+            canvas.onmousemove=null;
+            canvas.onmouseup=null;
+          }
+
+      }
+  }
+
+</script>
+
+</body>
+</html>

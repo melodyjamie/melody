@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>橡皮擦</title>
+</head>
+<style>
+    .box{
+        width:600px;
+        height:600px;
+        border:1px solid #0085d0;
+        position: relative;
+    }
+    .easer{
+        width: 50px;
+        height: 50px;
+        background: red;
+        position:absolute;
+        top:0;
+        left:0;
+        display: none;
+    }
+    .opacity{
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: 9999;
+    }
+</style>
+<body>
+<div class="box">
+    <canvas width="600" height="600">
+    </canvas>
+    <div class="easer"></div>
+    <div class="opacity"></div>
+</div>
+
+<script>
+
+    let easer=document.querySelector('.easer')
+    let opacity=document.querySelector('.opacity');
+    let canvas=document.querySelector('canvas');
+    let ctx=canvas.getContext('2d');
+    //画好的图
+    polyL(100,5)
+    function polyL(r,n){
+        let red=Math.PI/n;
+        ctx.beginPath();
+        ctx.moveTo(150+r,150); //开始位置
+        for(let i=0;i<2*n;i++){
+            let r1;
+            r1= i%2==0 ? r :r/2;
+            let x=150+r1*Math.cos(red*i);
+            let y=150+r1*Math.sin(red*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    opacity.onmousedown=function(e) {
+      //  let cx = e.offsetX, cy = e.offsetY;
+        easer.style.display='block';
+        opacity.onmousemove = function (e) {
+            let ox = e.offsetX-25, oy = e.offsetY-25;
+            easer.style.left=`${ox}px`;
+            easer.style.top=`${oy}px`;
+            ctx.clearRect(ox,oy,50,50);
+        }
+
+    opacity.onmouseup=function(){
+        easer.style.display='none'; //鼠标抬起消失
+        opacity.onmousemove=null;
+        opacity.onmouseup=null;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<body>
+
+<canvas width="300" height="300"></canvas>
+
+<script>
+  window.onload=function(){
+   let canvas=document.querySelector('canvas');
+   let ctx=canvas.getContext('2d');
+
+  /*    //画六个一样的圆
+ for(let i=0;i<4;i++){
+      for(let j=0;j<3;j++){
+        let x=(2*j+1)*30+j*20,
+            y=(2*i+1)*30+i*20,
+          endRad=Math.PI+Math.PI/2*j,
+            dir=i%2? true:false;
+         ctx.beginPath();
+          ctx.arc(x,y,30,0,endRad,dir);
+       //  ctx.closePath();
+          if(i>1){
+           ctx.fill();
+          }else {
+          ctx.stroke();
+          }
+      }
+    }  */
+
+
+// 借助圆画四边形五边形六边形...
+  /*
+   n
+   Math.PI*2/n *i
+   x   r*Math.cos()
+   y   r*Math.sin()
+   圆心坐标 150*150
+   r=100
+  */
+    poly(6);
+    function poly(n){
+        let red=Math.PI*2/n ;
+        ctx.beginPath();
+        ctx.moveTo(250,150); //开始点的坐标
+        for(let i=0;i<n;i++){
+            let x=150+100*Math.cos(red*i);
+            let y=150+100*Math.sin(red*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+
+//借助两个圆画多角形，五角星，四角星...
+      //定圆心坐标（150,150）
+      polyL(100,6)
+    function polyL(r,n){
+        let red=Math.PI/n;
+        ctx.beginPath();
+        ctx.moveTo(150+r,150); //开始位置
+        for(let i=0;i<2*n;i++){
+          let r1;
+          r1= i%2==0 ? r :r/2;
+            let x=150+r1*Math.cos(red*i);
+            let y=150+r1*Math.sin(red*i);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+
+
+  }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10月9号作业</title>
+</head>
+<style>
+   canvas{
+      border:1px solid #ff6700;
+    }
+</style>
+<body>
+<canvas width="400" height="400"></canvas>
+<script>
+  let canvas=document.querySelector('canvas');
+  let ctx=canvas.getContext('2d');
+
+  ctx.arc(200,200,100,-Math.PI*3/4,Math.PI*3/4);
+  ctx.stroke();
+
+
+
+</script>
+</body>
+</html>
